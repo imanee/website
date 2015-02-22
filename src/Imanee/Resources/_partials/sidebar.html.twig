@@ -1,0 +1,24 @@
+<!-- Header -->
+<section id="header" class="skel-layers-fixed">
+    <header>
+        <span class="image"><a href="/"><img src="{{ app.config.project.avatar }}" alt="" /></a></span>
+        <h1 id="logo"><a href="#">{{ app.config.project.name }}</a></h1>
+        <p>{{ app.config.project.tagline }}</p>
+    </header>
+
+    {% include nav|default('_partials/nav.html.twig') %}
+    <footer>
+        <ul class="icons">
+
+            {% if app.config.badges.travis %}<li><a href="https://travis-ci.org/{{ app.config.badges.travis }}" target="_blank"><img src="https://travis-ci.org/{{ app.config.badges.travis }}.svg?branch=master"></a></li>{% endif %}
+            {% if app.config.badges.rtdocs %}<li><a href="http://{{ app.config.badges.rtdocs }}.readthedocs.org/"><img src='https://readthedocs.org/projects/{{ app.config.badges.rtdocs }}/badge/?version=latest' alt='Documentation Status' /></li></a>{% endif %}
+            {% if app.config.badges.stars %}<li><a href="https://github.com/{{ app.config.badges.stars }}"><img src="https://img.shields.io/github/stars/{{ app.config.badges.stars }}.svg"></a></li>{% endif %}
+
+        </ul>
+
+        <ul class="icons">
+            <li><a href="http://twitter.com/erikaheidi" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="https://github.com/{{ app.config.github }}" class="icon fa-github"><span class="label">Github</span></a></li>
+        </ul>
+    </footer>
+</section>

@@ -1,0 +1,3 @@
+[submodule "web/demos"]
+	path = web/demos
+	url = git@github.com:imanee/demos.git

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Imanee</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Imanee - Image Manipulation Library for PHP" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery.scrollzer.min.js"></script>
+		<script src="/js/jquery.scrolly.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+
+        <noscript>
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+    {% if app.config.project.enable_fork_ribbon %}
+     <a href="https://github.com/{{ app.config.project.github }}"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+    {% endif %}
+
+    <div id="wrapper">
+            {% block sidebar %}
+                {% include '_partials/sidebar.html.twig' %}
+            {% endblock %}
+			<!-- Main -->
+				<div id="main">
+                    {% block content %}
+
+                        {% block section_one %}
+                            <!-- One -->
+                            <section id="one">
+                                <div class="container">
+                                    <header class="major">
+                                        <h2>{{ app.config.project.name }}</h2>
+                                        <p>{{ app.config.project.tagline }}</p>
+                                    </header>
+                                    <p>{{ app.config.project.description }}</p>
+                                </div>
+                            </section>
+                        {% endblock %}
+
+                        {% block section_two %}
+                            <!-- Two -->
+                            <section id="two">
+                                <div class="container">
+                                    <h3>Getting Started</h3>
+                                    <p>This library requires X and Y</p>
+
+                                    <p><code>$ composer require imanee/imanee</code></p>
+
+                                </div>
+                            </section>
+                        {% endblock %}
+
+                        {% block section_three %}
+                            {% if demos %}
+                                <!-- Three -->
+                                <section id="three">
+                                    <div class="container">
+                                        <h3>Demos</h3>
+                                        <p>Some funny and interesting demos to get you started.</p>
+                                        {#<div class="features">
+                                            {% for demo in demos %}
+                                                <article>
+                                                    <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+                                                    <div class="inner">
+                                                        <h4>{{ demo.title }}</h4>
+                                                        <p>{{ demo.description }}</p>
+                                                    </div>
+                                                </article>
+
+                                            {% endfor %}
+                                        </div>#}
+                                        {% for demo in demos %}
+                                            <h4><a href="/demo/{{ demo.slug }}">{{ demo.title }}</a></h4>
+                                            <p>{{ demo.description }}</p>
+                                        {% endfor %}
+                                    </div>
+                                </section>
+                            {% endif %}
+                        {% endblock %}
+
+                        {% block section_four %}
+
+                        {% endblock %}
+                    {% endblock %}
+
+
+				</div>
+
+            {% include '_partials/footer.html.twig' %}
+		</div>
+
+        <script>hljs.initHighlightingOnLoad();</script>
+	</body>
+</html>

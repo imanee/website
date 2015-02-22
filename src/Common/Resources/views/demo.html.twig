@@ -1,0 +1,26 @@
+{% extends 'main.html.twig' %}
+
+{% set nav='_partials/demo_nav.html.twig' %}
+
+{% block sidebar %}
+    {% include '_partials/sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+<!-- One -->
+<section id="one">
+    <div class="container">
+        <header class="major">
+            <h2>Demos</h2>
+        </header>
+
+        <h3>{{ metadata.title|default(metadata.script) }}</h3>
+        <p>{{ metadata.description|default('no description available') }}</p>
+
+        <h4>Code:</h4>
+        <pre><code class="php">{{ metadata.code }}</code></pre>
+
+    </div>
+</section>
+
+{% endblock %}
