@@ -15,7 +15,7 @@
         </header>
 
         <h3>{{ metadata.title|default(metadata.script) }}</h3>
-        <p>{{ metadata.description|default('no description available') }}</p>
+        <p>{{ metadata.description|default('no description available')|raw }}</p>
 
         <h4>Code:</h4>
         <pre><code class="php">{{ metadata.code }}</code></pre>
