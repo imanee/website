@@ -71,8 +71,8 @@
                                         <h3>Demos</h3>
                                         <p>Some funny and interesting demos to get you started.</p>
                                         {% for demo in demos %}
-                                            <h4><a href="/demo/{{ demo.slug }}">{{ demo.title }}</a></h4>
-                                            <p>{{ demo.description }}</p>
+                                            <h4><a href="/demo/{{ demo.slug }}">{{ demo.title|default(demo.slug) }}</a></h4>
+                                            <p>{{ demo.description|default('no description available')|raw }}</p>
                                         {% endfor %}
                                     </div>
                                 </section>

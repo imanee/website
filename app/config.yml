@@ -12,10 +12,11 @@ social:
   twitter: erikaheidi
 
 badges:
-  stars: imanee/imanee
-  forks: imanee/imanee
-  travis: imanee/imanee
-  rtdocs: imanee
+  stars: yes
+  travis: yes
+  rtdocs:
+    slug: imanee
+    url: http://docs.imanee.io
 
 twig:
   bundles:

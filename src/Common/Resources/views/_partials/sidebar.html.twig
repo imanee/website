@@ -10,9 +10,9 @@
     <footer>
         <ul class="icons">
 
-            {% if app.config.badges.travis %}<li><a href="https://travis-ci.org/{{ app.config.badges.travis }}" target="_blank"><img src="https://travis-ci.org/{{ app.config.badges.travis }}.svg?branch=master"></a></li>{% endif %}
-            {% if app.config.badges.rtdocs %}<li><a href="http://{{ app.config.badges.rtdocs }}.readthedocs.org/"><img src='https://readthedocs.org/projects/{{ app.config.badges.rtdocs }}/badge/?version=latest' alt='Documentation Status' /></li></a>{% endif %}
-            {% if app.config.badges.stars %}<li><a href="https://github.com/{{ app.config.badges.stars }}"><img src="https://img.shields.io/github/stars/{{ app.config.badges.stars }}.svg"></a></li>{% endif %}
+            {% if app.config.badges.travis %}<li><a href="https://travis-ci.org/{{ app.config.project.github }}" target="_blank"><img src="https://travis-ci.org/{{ app.config.project.github }}.svg?branch=master"></a></li>{% endif %}
+            {% if app.config.badges.rtdocs %}<li><a href="{{ app.config.badges.rtdocs.url }}"><img src='https://readthedocs.org/projects/{{ app.config.badges.rtdocs.slug }}/badge/?version=latest' alt='Documentation Status' /></a></li>{% endif %}
+            {% if app.config.badges.stars %}<li><a href="https://github.com/{{ app.config.project.github }}"><img src="https://img.shields.io/github/stars/{{ app.config.project.github }}.svg"></a></li>{% endif %}
 
         </ul>
 
