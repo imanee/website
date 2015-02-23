@@ -1,7 +1,8 @@
 project:
   name: Imanee
   url: http://imanee.io
-  tagline: PHP Imane Manipulation library
+  tagline: PHP Image Manipulation library
+  tags: php, image, imagick, imagemagick, image processing, image manipulation
   enable_fork_ribbon: yes
   github: imanee/imanee
   description: Imanee is a wrapper for the Imagemagick library in PHP (Imagick extension). It provides a simple workflow and several convenient methods to facilitate image processing and manipulation, like image composition, applying effects and filters to an image, animating gifs and more.
