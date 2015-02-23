@@ -8,6 +8,8 @@ project:
   description: Imanee is a wrapper for the Imagemagick library in PHP (Imagick extension). It provides a simple workflow and several convenient methods to facilitate image processing and manipulation, like image composition, applying effects and filters to an image, animating gifs and more.
   avatar: /images/imanee_cat_button.png
 
+google_ua: UA-60049657-1
+
 social:
   twitter: erikaheidi
 
