@@ -8,6 +8,7 @@
 
     {% include nav|default('_partials/nav.html.twig') %}
     <footer>
+        <img src="/images/do_badge.png">
         <ul class="icons">
 
             {% if app.config.badges.travis %}<li><a href="https://travis-ci.org/{{ app.config.project.github }}" target="_blank"><img src="https://travis-ci.org/{{ app.config.project.github }}.svg?branch=master"></a></li>{% endif %}
