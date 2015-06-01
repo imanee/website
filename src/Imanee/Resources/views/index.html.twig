@@ -1,23 +1,55 @@
 {% extends 'main.html.twig' %}
 
+
+{% block section_requirements %}
+    <!-- Requirements -->
+    <section id="requirements">
+        <div class="container">
+            <h3>Requirements</h3>
+            <p>Imanee needs an underlying image extension like Imagick in order to work. Imagick currently supports <strong>Imagick</strong> and <strong>GD</strong> extensions,
+            but notice that some features (like animated gifs) might not be supported from one image extension to another.</p>
+            <p>It will automatically detect which extension to use - Imagick is the default whenever available. You can also override
+            the default ImageResource to use a specific extension.</p>
+
+            <p>Imanee also requires <strong>PHP >= 5.4</strong>.</p>
+
+            <h3>Installing the extensions</h3>
+            <p>Imagick is the most recommended extension because it has more features, but if you don't need animated gifs you can safely choose to use GD.</p>
+
+            <h4>Ubuntu</h4>
+
+            <p><code>$ sudo apt-get install php5-imagick</code> [ Imagick ]</p>
+            <p><code>$ sudo apt-get install php5-gd</code> [ GD ]</p>
+
+            <p><small>Don't forget to restart the web server so the changes take effect.</small></p>
+        </div>
+    </section>
+{% endblock %}
+
 {% block section_two %}
 <!-- Two -->
-<section id="two">
+<section id="getting-started">
     <div class="container">
         <h3>Getting Started</h3>
-        <p>Imanee requires <strong>PHP >= 5.4</strong> and the <strong>Imagick</strong> extension.</p>
-
-        <h4>Installing Imanee</h4>
-        <p>Installation is easily done with <a href="https://getcomposer.org/" target="_blank" title="Composer">Composer</a>:</p>
+        <p>Once you have one of the supported image extensions installed, you can easily add Imanee to your project
+        using <a href="https://getcomposer.org/" target="_blank" title="Composer">Composer</a>:</p>
 
         <p><code>$ composer require imanee/imanee</code></p>
 
-        <h4>Installing the Imagick extension</h4>
-        <p>On Ubuntu, you can install the extension simply with:
+        <h4>Using the default ImageResource</h4>
+        <p>Imanee will check if you have the Imagick extension, since that's the default. If it cannot find the extension loaded, it will try to use GD instead.
+        An exception will be thrown if you don't have any available.</p>
+<pre><code class="php">$imanee = new Imanee('test.jpg');
+ echo $imanee->thumbnail(200, 200, true)
+        ->output();
+</code></pre>
 
-            <p><code>$ sudo apt-get install php5-imagick</code></p>
-
-        <p><small>Don't forget to restart the web server so the changes take effect.</small></p>
+        <h4>Providing an ImageResource</h4>
+        <p>Useful when you have Imagick installed but you want to use GD instead. You might also want to create your own ImageResource and use it with Imanee.</p>
+<pre><code class="php">$imanee = new Imanee('test.jpg', new GDResource());
+echo $imanee->thumbnail(200, 200, true)
+        ->output();
+    </code></pre>
 
     </div>
 </section>

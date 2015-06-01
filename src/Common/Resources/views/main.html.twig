@@ -51,7 +51,7 @@
 
                         {% block section_one %}
                             <!-- One -->
-                            <section id="one">
+                            <section id="about">
                                 <div class="container">
                                     <header class="major">
                                         <h2>{{ app.config.project.name }}</h2>
@@ -62,9 +62,22 @@
                             </section>
                         {% endblock %}
 
+                        {% block section_requirements %}
+                            <!-- Requirements -->
+                            <section id="requirements">
+                                <div class="container">
+                                    <h3>Requirements</h3>
+                                    <p>This library requires X and Y</p>
+
+                                    <p><code>$ composer require {{ app.config.project.github }}</code></p>
+
+                                </div>
+                            </section>
+                        {% endblock %}
+
                         {% block section_two %}
                             <!-- Two -->
-                            <section id="two">
+                            <section id="getting-started">
                                 <div class="container">
                                     <h3>Getting Started</h3>
                                     <p>This library requires X and Y</p>
@@ -78,7 +91,7 @@
                         {% block section_three %}
                             {% if demos %}
                                 <!-- Three -->
-                                <section id="three">
+                                <section id="demos">
                                     <div class="container">
                                         <h3>Demos</h3>
                                         <p>Some funny and interesting demos to get you started.</p>
