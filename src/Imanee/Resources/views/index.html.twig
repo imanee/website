@@ -6,12 +6,13 @@
     <section id="requirements">
         <div class="container">
             <h3>Requirements</h3>
-            <p>Imanee needs an underlying image extension like Imagick in order to work. Imagick currently supports <strong>Imagick</strong> and <strong>GD</strong> extensions,
-            but notice that some features (like animated gifs) might not be supported from one image extension to another.</p>
-            <p>It will automatically detect which extension to use - Imagick is the default whenever available. You can also override
-            the default ImageResource to use a specific extension.</p>
+            <p>Imanee needs an underlying image extension like <strong>Imagick</strong> in order to work. Imanee currently supports <strong>Imagick</strong> and <strong>GD</strong> extensions.
+            Notice that some features (like animated gifs - not supported by GD) might not be present depending on the extension used.</p>
+            <p>Imanee will use an <em>ImagickResource</em> as default whenever the <em>Imagick extension</em> is available. If <em>Imagick</em>
+            can't be found, Imanee will try to use a <em>GDResource</em> instead. You can also provide a custom <em>ImageResource</em>
+            object while instantiating Imanee.</p>
 
-            <p>Imanee also requires <strong>PHP >= 5.4</strong>.</p>
+            <p>Imanee requires <strong>PHP >= 5.4</strong>.</p>
 
             <h3>Installing the extensions</h3>
             <p>Imagick is the most recommended extension because it has more features, but if you don't need animated gifs you can safely choose to use GD.</p>
